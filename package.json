@@ -1,0 +1,18 @@
+{
+  "name": "cucumber-js-supertest",
+  "version": "1.0.0",
+  "description": "This is custom node, cucumber-js, supertest and mocha testing framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js ./features -r steps"
+  },
+  "author": "bagtyyar",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.3.1",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3",
+    "supertest": "^6.1.4"
+  }
+}
