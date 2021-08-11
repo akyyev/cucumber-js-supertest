@@ -38,21 +38,21 @@ async function wordGIF(length) {
 }
 
 // Since wordGIF returns a promise we can call then and catch
-// wordGIF(3)
-//     .then((data) => {
-//         createDom(data.word, 'word');
-//         createImage(data.url, 'image');
-//     })
-//     .catch(console.error)
-
-
-let promises = [wordGIF(3), wordGIF(4), wordGIF(5), wordGIF(7)];
-// Promise.all works for making sequential calls and if any of them fail it will to catch block
-Promise.all(promises)
-    .then(results => {
-        results.forEach(data => {
-            createDom(data.word, 'word');
-            createImage(data.url, 'image');
-        });
+wordGIF(3)
+    .then((data) => {
+        createDom(data.word, 'word');
+        createImage(data.url, 'image');
     })
     .catch(console.error)
+
+
+// let promises = [wordGIF(3), wordGIF(4), wordGIF(5), wordGIF(7)];
+// // Promise.all works for making sequential calls and if any of them fail it will to catch block
+// Promise.all(promises)
+//     .then(results => {
+//         results.forEach(data => {
+//             createDom(data.word, 'word');
+//             createImage(data.url, 'image');
+//         });
+//     })
+//     .catch(console.error)
