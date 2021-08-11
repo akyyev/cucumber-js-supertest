@@ -13,3 +13,13 @@ export function createDom(element, idValue) {
     document.body.appendChild(myDiv);
 }
 
+export function createImage(url) {
+    var myImage = document.createElement("div");
+    myImage.innerHTML = `<img src="${url}" alt="Image is not available">`
+    document.body.appendChild(myImage);
+}
+
+export const acar = {
+    wordnik: "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5",
+    giphy: "gULhDRsT8EXi5iku09zG7ndGOC61jQfH"
+}

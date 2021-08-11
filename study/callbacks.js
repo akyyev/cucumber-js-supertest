@@ -1,6 +1,6 @@
 
 let posts = [
-    { title: 'Post One', content: 'This is post oneds' },
+    { title: 'Post One', content: 'This is post one' },
     { title: 'Post Two', content: 'This is post two' }
 ]
 
