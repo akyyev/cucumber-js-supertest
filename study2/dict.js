@@ -1,7 +1,7 @@
-import { createDom, createImage, acar } from '../study/helper.js';
+import { createDom, createImage, acar } from './utils/helper.js';
 let giphyAPI = `https://api.giphy.com/v1/gifs/search?api_key=${acar.giphy}&q=`;
 
-async function init() {
+export async function init() {
 
     const word = await fetch('https://random-word-form.herokuapp.com/random/noun?count=1').then(res => res.json());
     const meaning = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + word[0]).then(res => res.json());
