@@ -30,7 +30,7 @@ http.createServer(function (request, response) {
             console.error(error);
             if(error.code == 'ENOENT'){
                 fs.readFile('./404.html', function(error, content) {
-                    response.writeHead(200, { 'Content-Type': contentType });
+                    response.writeHead(200, { 'Content-Type': map[extname] });
                     response.end(content, 'utf-8');
                 });
             }
