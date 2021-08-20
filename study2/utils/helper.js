@@ -1,4 +1,3 @@
-
 export function createDom(element, idValue) {
     //Create the element using the createElement method.
     var myDiv = document.createElement("div");
@@ -11,12 +10,6 @@ export function createDom(element, idValue) {
 
     //Finally, append the element to the HTML body
     document.body.appendChild(myDiv);
-}
-
-export function createImage(url) {
-    var myImage = document.createElement("div");
-    myImage.innerHTML = `<img src="${url}" alt="Image is not available">`
-    document.body.appendChild(myImage);
 }
 
 export const acar = {

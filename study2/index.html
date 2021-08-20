@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-    <link rel="shortcut icon" href="favicon.ico">
-    <title>Document</title>
+
+    <!-- To use jquery in your script -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <!-- This is just for favicon icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <title>My random word dictionary</title>
 </head>
+
 <body>
     <script type="module" src="./dict.js"></script>
-    <button onClick="window.location.reload();">Give Me New Word</button>
+
+    <header>
+        <h1 id="word"></h1>
+    </header>
+
+    <section>
+        <nav>
+            <p>Definition</p>
+            <h2 id="definition"></h2>
+        </nav>
+
+        <article>
+            <img class="zoom" alt="Image not found" id="gif_image">
+        </article>
+    </section>
+
+    <footer>
+        <button onclick="window.location.reload()">Give me new word, please!</button>
+    </footer>
+
 </body>
+
 </html>

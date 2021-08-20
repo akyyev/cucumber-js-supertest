@@ -1,4 +1,4 @@
-import { createDom, createImage, acar } from './utils/helper.js';
+import { createDom, acar } from './utils/helper.js';
 let giphyAPI = `https://api.giphy.com/v1/gifs/search?api_key=${acar.giphy}&q=`;
 
 export async function init() {
@@ -9,18 +9,15 @@ export async function init() {
     const response2 = await fetch(giphyAPI + word[0]);
     const picture = await response2.json();
 
-    createDom(`<h1>${word[0]}</h1>`)
+    const gifImage = picture?.data[0]?.images['fixed_height']?.url;
+    const definition = meaning[0]?.meanings[0]?.definitions[0]?.definition;
+    const audioUrl = meaning[0]?.phonetics[0]?.audio;
 
-    const url = picture?.data[0]?.images['fixed_height_small']?.url
-    createImage(url);
+    $('#word').text(word[0]);
+    $('#gif_image').attr('src', gifImage);
+    $('#definition').text(definition);
 
-    createDom(meaning[0].meanings[0].definitions[0].definition);
-
-    createDom(
-        `<audio controls autoplay>
-                        <source src="${meaning[0].phonetics[0].audio}" type="audio/mp3">
-                        </audio>`
-    );
+    createDom(`<div class='audio-container'><audio controls autoplay> <source src="${audioUrl}" type="audio/mp3"></audio> </div>`);
 }
 
 init();

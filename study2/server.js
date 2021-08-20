@@ -2,7 +2,6 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
-console.log(process.env.PORT);
 http.createServer( (request, response) => {
     var filePath = request.url;
     if (filePath == '/')
@@ -21,7 +20,8 @@ http.createServer( (request, response) => {
         '.mp3': 'audio/mpeg',
         '.svg': 'image/svg+xml',
         '.pdf': 'application/pdf',
-        '.doc': 'application/msword'
+        '.doc': 'application/msword',
+        '.webmanifest': 'application/manifest+json'
     };
 
     fs.readFile(__dirname + filePath, (error, content) => {
