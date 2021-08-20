@@ -9,26 +9,21 @@ http.createServer(function (request, response) {
 
     var extname = path.extname(filePath);
     var contentType = 'text/html';
-    switch (extname) {
-        case '.js':
-            contentType = 'text/javascript';
-            break;
-        case '.css':
-            contentType = 'text/css';
-            break;
-        case '.json':
-            contentType = 'application/json';
-            break;
-        case '.png':
-            contentType = 'image/png';
-            break;      
-        case '.jpg':
-            contentType = 'image/jpg';
-            break;
-        case '.wav':
-            contentType = 'audio/wav';
-            break;
-    }
+    const map = {
+        '.ico': 'image/x-icon',
+        '.html': 'text/html',
+        '.js': 'text/javascript',
+        '.json': 'application/json',
+        '.css': 'text/css',
+        '.png': 'image/png',
+        '.jpg': 'image/jpeg',
+        '.wav': 'audio/wav',
+        '.mp3': 'audio/mpeg',
+        '.svg': 'image/svg+xml',
+        '.pdf': 'application/pdf',
+        '.doc': 'application/msword'
+    };
+    
 
     fs.readFile(__dirname + filePath, function(error, content) {
         if (error) {
@@ -46,7 +41,7 @@ http.createServer(function (request, response) {
             }
         }
         else {
-            response.writeHead(200, { 'Content-Type': contentType });
+            response.writeHead(200, { 'Content-Type': map[extname] });
             response.end(content, 'utf-8');
         }
     });
