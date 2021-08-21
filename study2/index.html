@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
     <!-- To use jquery in your script -->
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
 
     <!-- This is just for favicon icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
@@ -29,7 +29,7 @@
     <section>
         <nav>
             <p>Definition</p>
-            <h2 id="definition"></h2>
+            <h3 id="definition"></h3>
         </nav>
 
         <article>
@@ -38,9 +38,12 @@
     </section>
 
     <footer>
-        <button onclick="window.location.reload()">Give me new word, please!</button>
+        <button id="randomWord">Give me new word, please!</button>
     </footer>
 
+    <div class='audio-container'>
+        <audio hidden controls autoplay src='' type="audio/mp3">Audio tag not supported</audio> 
+    </div>
 </body>
 
 </html>
